@@ -1,10 +1,11 @@
 import 'package:abc/service/api_service.dart';
+import 'package:abc/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
+import 'helpers/database_helper.dart';
 import 'models/product_model.dart';
 
 import 'package:flutter/material.dart';
-import 'db_helper.dart';
 
 void main() {
   runApp(MyApp());
@@ -79,6 +80,14 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: _insertItem,
               child: Text('Add Item'),
             ),
+            CustomButton(
+              text: 'Add Item',
+              textColor: Colors.tealAccent,
+              onTap: () {
+                _insertItem;
+              },
+
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: _items.length,
@@ -101,7 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
 
 // void main() => runApp(MyApp());
 //
@@ -167,7 +175,6 @@ class _MyHomePageState extends State<MyHomePage> {
 //     );
 //   }
 // }
-
 
 // import 'package:abc/home_screen.dart';
 // import 'package:flutter/material.dart';
